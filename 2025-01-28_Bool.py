@@ -79,8 +79,6 @@ fridge = ["a", "b", "c"]
 # container enthalten sind und wird dann in der nächsten
 # Funktion verwendet
 
-fridge = ["a", "b", "c"] # vorhandene Zutaten
-
 def contains_all(liste, container):
     for item in liste:
         if item not in container:
@@ -91,13 +89,18 @@ def contains_all(liste, container):
 # ein String ausgegeben, der mehrzeilig ist.
 # Mehrzeilige Strings sind mit dreifachem Anführungszeichen
 # markiert und speichern Zeilenumbrüche.
-def which_cake(ingredients):
+def which_cake(fridge):
     # benötigte Zutaten:
-    banana = ["a", "c", "d"]
-    cheese_cake = ["a", "b", "c"]
-    chocolate = ["a", "d", "e"]
-    return f"""Bananenkuchen: {contains_all(ingredients, banana)}
-Cheese Cake: {contains_all(ingredients, cheese_cake)}
-Schokoladencookie: {contains_all(ingredients, chocolate)}"""
+    banana_1 = ["Mehl", "Bananen", "Eier"]
+    banana_2 = ["Mehl", "Bananenextrakt", "Eier"]
+    cheese_1 = ["Frischkäse", "Eier", "Vanilleextrakt"]
+    cheese_2 = ["Frischkäse", "Eier", "Zitronensaft"]
+    chocolate = contains_all(["Mehl", "Schokolade", "Eier"], fridge)
+    banana = contains_all(banana_1, fridge) or contains_all(banana_2, fridge)
+    cheese = contains_all(cheese_1, fridge) or contains_all(cheese_2, fridge)
+    return f"""Bananenkuchen: {banana}
+Cheese Cake: {cheese}
+Schokoladencookie: {chocolate}"""
 
-print(which_cake(fridge))
+kuehlschrank = ["Mehl", "Schokolade", "Eier", "Bananenextrakt", "Zitronensaft"] # vorhandene Zutaten
+print(which_cake(kuehlschrank))
