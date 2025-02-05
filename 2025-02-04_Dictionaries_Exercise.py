@@ -92,5 +92,3 @@ def find_top_student(student_grades):
 
 print("\n Ausgabe des besten Studenten: ")
 print(find_top_student(student_grades))
-
-print([1, 2, 3, 4, 2].index(2))
