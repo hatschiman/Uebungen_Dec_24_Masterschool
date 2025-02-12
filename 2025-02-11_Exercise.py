@@ -9,13 +9,28 @@ performers = {
 }
 
 # Aufgabe 3
-medal = {"100m":
-             {"Gold": "Usain Bolt",
-              "Silver": "Marco",
-              "Bronze": "Jon"}
-         }
-medal = {"100m": ["Usain Bolt", "Marco", "Jon"]}
 
+medal = {"100m": [["Usain Bolt",  "Jamaica"],
+                  ["Marco", "Germany"],
+                  ["Jon", "USA"]]
+         }
+
+medal = {"100m": [{"name": "Usain Bolt", "country": "Jamaica"},
+                  {"name": "Marco", "country": "Germany"},
+                  {"name": "Jon", "country": "USA"}]
+         }
+
+medal = {"100m":
+             {"Gold": ["Usain Bolt",  "Jamaica"],
+              "Silver": ["Marco", "Germany"],
+              "Bronze": ["Jon", "USA"]}
+         }
+
+medal = {"100m":
+             {"Gold": {"name": "Usain Bolt", "country": "Jamaica"},
+              "Silver": {"name": "Marco", "country": "Germany"},
+              "Bronze": {"name": "Jon", "country": "USA"}}
+         }
 
 # Aufgabe 4
 athlete_bio = {"123":
